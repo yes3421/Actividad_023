@@ -209,13 +209,7 @@ Node* LinkedList::lastPtr() const
 
 void insertionSortIP()
 {
-    for (
-        Node* current = first_->next;
-        current != nullptr;
-        current = current->next;
-    ) {
-        
-    }
+    
 }
 
 // Mapa auxiliar
