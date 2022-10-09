@@ -207,9 +207,9 @@ Node* LinkedList::lastPtr() const
     return last_;
 }
 
-void insertionSortIP()
+void insertionSort()
 {
-    
+
 }
 
 // Mapa auxiliar
