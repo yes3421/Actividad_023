@@ -207,6 +207,17 @@ Node* LinkedList::lastPtr() const
     return last_;
 }
 
+void insertionSortIP()
+{
+    for (
+        Node* current = first_->next;
+        current != nullptr;
+        current = current->next;
+    ) {
+        
+    }
+}
+
 // Mapa auxiliar
 std::map<int, std::string> intToString{
     {0, "Jan"}, {1, "Feb"},

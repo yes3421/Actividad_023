@@ -32,6 +32,8 @@ public:
     void removeLast();
     void removeAt(int pos);
 
+    void insertionSortIP();
+    
 protected:
     Node* firstPtr() const;
     Node* lastPtr() const;
