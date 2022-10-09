@@ -226,6 +226,7 @@ std::ostream& operator<<(std::ostream& os, LinkedList& linkedList)
     ) {
         os
         << intToString[current->record.month] << " "
+        << current->record.day << " "
         << current->record.hour << " "
         << current->record.IPAddress << " "
         << current->record.failure << '\n'; 
