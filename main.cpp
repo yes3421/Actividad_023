@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 
     lecturaBitacora(records);
 
-    std::cout << records << '\n';
+    records.writeFile();
 
     // Ordenar por ip
 

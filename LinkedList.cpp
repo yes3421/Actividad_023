@@ -222,14 +222,14 @@ std::map<int, std::string> intToString{
     {10, "Nov"}, {11, "Dec"},
 };
 
-void writeFile()
+void LinkedList::writeFile()
 {
-    std::ofstream("bitacoraOrdenadaIP-Eq5.txt");
+    std::ofstream file("bitacoraOrdenadaIP-Eq5.txt");
 
     for (
         Node* current = first_;
         current != last_->next;
-        current = current->next;
+        current = current->next
     ) {
         file
         << intToString[current->record.month] << " "
