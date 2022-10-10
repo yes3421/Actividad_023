@@ -2,6 +2,7 @@
 #define LINKEDLIST_H
 
 #include <map>
+#include <fstream>
 #include <iostream>
 #include <stdexcept>
 
@@ -33,6 +34,8 @@ public:
     void removeAt(int pos);
 
     void insertionSort();
+
+    void writeFile();
 
 protected:
     Node* firstPtr() const;
