@@ -7,6 +7,7 @@
 #include <stdexcept>
 
 #include "Node.h"
+#include "Compare.h"
 
 class LinkedList {
 
