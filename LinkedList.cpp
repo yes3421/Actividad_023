@@ -207,9 +207,9 @@ Node* LinkedList::lastPtr() const
     return last_;
 }
 
-void insertionSort()
+void LinkedList::insertionSort()
 {
-
+    
 }
 
 // Mapa auxiliar
@@ -221,6 +221,41 @@ std::map<int, std::string> intToString{
     {8, "Sep"}, {9, "Oct"},
     {10, "Nov"}, {11, "Dec"},
 };
+
+void LinkedList::sequentialSearch(const std::string& initial, const std::string& final)
+{
+    static int counter = 1;
+
+    std::string fileName = "salida" + std::to_string(counter) +"-Eq5.txt";
+
+    std::ofstream file(fileName);
+
+    Node* begin = first_;
+
+    while (begin->record.IPAddress != initial) {
+        begin = begin->next;
+    }
+
+    while (begin->record.IPAddress != final) {
+        std::cout
+        << intToString[begin->record.month] << " "
+        << begin->record.day << " "
+        << begin->record.hour << " "
+        << begin->record.IPAddress << " "
+        << begin->record.failure << '\n';
+
+        file
+        << intToString[begin->record.month] << " "
+        << begin->record.day << " "
+        << begin->record.hour << " "
+        << begin->record.IPAddress << " "
+        << begin->record.failure << '\n';
+
+        begin = begin->next;
+    }
+
+    ++counter;
+}
 
 void LinkedList::writeFile()
 {

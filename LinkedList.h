@@ -2,6 +2,7 @@
 #define LINKEDLIST_H
 
 #include <map>
+#include <string>
 #include <fstream>
 #include <iostream>
 #include <stdexcept>
@@ -35,6 +36,8 @@ public:
     void removeAt(int pos);
 
     void insertionSort();
+
+    void sequentialSearch(const std::string& initial, const std::string& final);
 
     void writeFile();
 
