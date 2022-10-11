@@ -14,13 +14,22 @@ int main(int argc, char* argv[])
 
     records.writeFile();
 
-    // Ordenar por ip
+    std::string initialIP;
+    std::string finalIP;
+    std::string respuesta;
 
-    // Solicitar las ip
+    do {
+        std::cout << "Ingrese la IP inicial: ";
+        std::cin >> initialIP;
 
-    // Desplegar y guardar archivo
+        std::cout << "Ingrese la IP final: ";
+        std::cin >> finalIP;
 
-    records.sequentialSearch("70.16.722.45:5886", "322.17.842.98:4254");
+        records.sequentialSearch(initialIP, finalIP);
+
+        std::cout << "Desea realizar otra búsqueda? [Y/n] ";
+        std::cin >> respuesta;  
+    } while (respuesta != "n");
 
     return EXIT_SUCCESS;
 }
