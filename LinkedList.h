@@ -50,7 +50,7 @@ public:
     void removeLast();
     void removeAt(int pos);
 
-    void insertionSort();
+    LinkedList insertionSort();
 
     void sequentialSearch(const std::string& initial, const std::string& final);
 
@@ -64,6 +64,8 @@ private:
     Node* first_;
     Node* last_;
     int length_;
+    void sortedInsert(LinkedList& sortedList, Node* node);
+
 
 };
 

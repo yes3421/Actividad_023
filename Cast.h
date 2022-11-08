@@ -23,9 +23,9 @@ struct IPAddressType {
     int octet2 = 0;
     int octet3 = 0;
     int octet4 = 0;
-    int port = 0;
 };
 
 IPAddressType strToIP(std::string example);
+std::string IPToStr(IPAddressType IPAddress);
 
 #endif

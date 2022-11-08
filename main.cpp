@@ -25,9 +25,9 @@ int main(int argc, char* argv[])
 
     lecturaBitacora(records);
 
-    records.insertionSort();
+    LinkedList recordsSorted = records.insertionSort();
 
-    records.writeFile();
+    recordsSorted.writeFile();
 
     std::string initialIP;
     std::string finalIP;
@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
         std::cout << "Ingrese la IP final: ";
         std::cin >> finalIP;
 
-        records.sequentialSearch(initialIP, finalIP);
+        recordsSorted.sequentialSearch(initialIP, finalIP);
 
         std::cout << "Desea realizar otra búsqueda? [Y/n] ";
         std::cin >> respuesta;  

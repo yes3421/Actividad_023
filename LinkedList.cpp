@@ -126,15 +126,13 @@ void LinkedList::insertLast(Record record)
 
 void LinkedList::insertAt(Record record, int pos)
 {
-    if (pos < 0 || length_ - 1 < pos) {
-        throw std::invalid_argument("Invalid position");
-    }
-
     if (pos == 0) {
         insertFirst(record);
-    } else if (pos == length_ - 1) {
+    }
+    else if (pos == length_ - 1) {
         insertLast(record);
-    } else {
+    }
+    else {
         Node* current = first_;
 
         for (int i = 0; i != pos - 1; ++i) {
@@ -222,11 +220,6 @@ Node* LinkedList::lastPtr() const
     return last_;
 }
 
-void LinkedList::insertionSort()
-{
-    
-}
-
 // Mapa auxiliar
 std::map<int, std::string> intToString{
     {0, "Jan"}, {1, "Feb"},
@@ -272,9 +265,51 @@ void LinkedList::sequentialSearch(const std::string& initial, const std::string&
     ++counter;
 }
 
+
+LinkedList LinkedList::insertionSort()
+{
+    LinkedList sortedList;
+
+    for (
+        Node* current = first_;
+        current != last_->next;
+        current = current->next
+    ) {
+        sortedInsert(sortedList, current);
+    }
+
+    return sortedList;
+}
+
+void LinkedList::sortedInsert(LinkedList& sortedList, Node* node)
+{
+    int counter = 0;
+
+    if (sortedList.isEmpty()) {
+        sortedList.insertFirst(node->record);
+    }
+
+    Node* sortedCurrent = sortedList.firstPtr();
+
+    while (
+        sortedCurrent != nullptr
+        &&
+        less(
+            strToIP(sortedCurrent->record.IPAddress),
+            strToIP(node->record.IPAddress)
+        )
+    ) {
+
+        sortedCurrent = sortedCurrent->next;
+        ++counter;
+    }
+
+    sortedList.insertAt(node->record, counter);
+}
+
 void LinkedList::writeFile()
 {
-    std::ofstream file("bitacoraOrdenadaIP-Eq5.txt");
+        std::ofstream file("bitacoraOrdenadaIP-Eq5.txt");
 
     for (
         Node* current = first_;

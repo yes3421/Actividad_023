@@ -19,5 +19,7 @@
 #include "Cast.h"
 
 bool compare(IPAddressType& ip1, IPAddressType& ip2);
+bool less(IPAddressType ip1, IPAddressType ip2);
+
 
 #endif

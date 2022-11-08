@@ -33,9 +33,13 @@ IPAddressType strToIP(std::string example)
     
     dot = example.find(':');
     ipAddress.octet4 = std::stoi(example.substr(0, dot));
-    example.erase(0, dot + 1);
-    
-    ipAddress.port = std::stoi(example);
+    example.erase();
     
     return ipAddress;
+}
+
+std::string IPToStr(IPAddressType IPAddress)
+{
+    std::string ip = std::to_string(IPAddress.octet1) + "." + std::to_string(IPAddress.octet2) + "." + std::to_string(IPAddress.octet3) + "." + std::to_string(IPAddress.octet4);
+    return ip;
 }
