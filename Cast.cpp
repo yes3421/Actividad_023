@@ -40,6 +40,9 @@ IPAddressType strToIP(std::string example)
 
 std::string IPToStr(IPAddressType IPAddress)
 {
-    std::string ip = std::to_string(IPAddress.octet1) + "." + std::to_string(IPAddress.octet2) + "." + std::to_string(IPAddress.octet3) + "." + std::to_string(IPAddress.octet4);
+    std::string ip = std::to_string(IPAddress.octet1) + "." 
+    + std::to_string(IPAddress.octet2) + "." 
+    + std::to_string(IPAddress.octet3) + "." + std::to_string(IPAddress.octet4);
+
     return ip;
 }
