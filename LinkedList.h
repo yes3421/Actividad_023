@@ -22,6 +22,7 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "Cast.h"
 #include "Node.h"
 #include "Compare.h"
 

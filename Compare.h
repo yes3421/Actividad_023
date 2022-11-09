@@ -20,6 +20,7 @@
 
 bool compare(IPAddressType& ip1, IPAddressType& ip2);
 bool less(IPAddressType ip1, IPAddressType ip2);
+bool lessEqual(IPAddressType ip1, IPAddressType ip2);
 
 
 #endif

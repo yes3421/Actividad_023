@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 
         recordsSorted.sequentialSearch(initialIP, finalIP);
 
-        std::cout << "Desea realizar otra búsqueda? [Y/n] ";
+        std::cout << "¿Desea realizar otra búsqueda? [Y/n] ";
         std::cin >> respuesta;  
     } while (respuesta != "n");
 

@@ -240,11 +240,11 @@ void LinkedList::sequentialSearch(const std::string& initial, const std::string&
 
     Node* begin = first_;
 
-    while (begin->record.IPAddress != initial) {
+    while (less(strToIP(begin->record.IPAddress), strToIP(initial))) {
         begin = begin->next;
     }
 
-    while (begin->record.IPAddress != final) {
+    while (lessEqual(strToIP(begin->record.IPAddress), strToIP(final))) {
         std::cout
         << intToString[begin->record.month] << " "
         << begin->record.day << " "
@@ -289,22 +289,26 @@ void LinkedList::sortedInsert(LinkedList& sortedList, Node* node)
         sortedList.insertFirst(node->record);
     }
 
-    Node* sortedCurrent = sortedList.firstPtr();
+    if (!less(strToIP(sortedList.lastPtr()->record.IPAddress), strToIP(node->record.IPAddress))) {
+        Node* sortedCurrent = sortedList.firstPtr();
 
-    while (
-        sortedCurrent != nullptr
-        &&
-        less(
-            strToIP(sortedCurrent->record.IPAddress),
-            strToIP(node->record.IPAddress)
-        )
-    ) {
+        while (
+            sortedCurrent != nullptr
+            &&
+            less(
+                strToIP(sortedCurrent->record.IPAddress),
+                strToIP(node->record.IPAddress)
+            )
+        ) {
+            sortedCurrent = sortedCurrent->next;
+            ++counter;
+        }
 
-        sortedCurrent = sortedCurrent->next;
-        ++counter;
+        sortedList.insertAt(node->record, counter);
     }
-
-    sortedList.insertAt(node->record, counter);
+    else {
+        sortedList.insertAt(node->record, sortedList.length() - 1);
+    }
 }
 
 void LinkedList::writeFile()
